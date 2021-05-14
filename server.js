@@ -24,6 +24,8 @@ mongoose
 
 app.use("/api/items", items);
 
+app.get("/", (req, res) => res.send("Homepage"));
+
 if (process.env.NODE_ENV === "production") {
   // Set static folder
   app.use(express.static("client/build"));
