@@ -6,7 +6,6 @@ const path = require("path");
 const items = require("./routes/api/items");
 
 const app = express();
-const server = require("http").createServer(app);
 
 app.use(bodyParser.json());
 
@@ -33,4 +32,4 @@ app.use("/api/items", items);
 
 const PORT = process.env.PORT || 5000;
 
-server.listen(PORT, () => console.log(`Server is listening on PORT ${PORT}`));
+app.listen(PORT, () => console.log(`Server is listening on PORT ${PORT}`));
